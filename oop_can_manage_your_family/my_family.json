@@ -1,0 +1,45 @@
+[
+ {
+       "id": 33,
+       "date_of_birth": [
+               10,
+               21,
+               1976
+       ],
+       "first_name": "Rayan",
+       "last_name": "Adams",
+       "is_married_to": 0,
+       "eyes_color": "Brown",
+       "genre": "Male",
+       "children": [2],
+       "is_married_to": 0 
+ },
+ {
+       "id": 23,
+       "date_of_birth": [
+               4,
+               18,
+               2002
+       ],
+       "first_name": "Jacob",
+       "last_name": "Adams",
+       "is_married_to": 0,
+       "eyes_color": "Brown",
+       "genre": "Male",
+       "children": []
+ },
+ {
+       "id": 3,
+       "date_of_birth": [
+               1,
+               30,
+               2016
+       ],
+       "first_name": "Helen",
+       "last_name": "Adams",
+       "is_married_to": 0,
+       "eyes_color": "Brown",
+       "genre": "Female",
+       "children": []
+ }
+]
