@@ -1,17 +1,12 @@
 '''
-GitHub repo:
-Project directory:
-Task #: 0 - 5
-Dependent or test file(s): 0-main.py, 1-main.py, 2-main.py, 3-main.py, \
-4-main.py, 5-main.py
-
-Summary:
+GitHub repo: https://github.com/WaBlueKey/holbertonschool-higher_level_programming
+Project directory: oop_can_manage_your_family
+Task #: 0 - 4
 
 By: Zee Adams, 2016
 '''
 
 import json
-import os.path
 
 class Person():
 
