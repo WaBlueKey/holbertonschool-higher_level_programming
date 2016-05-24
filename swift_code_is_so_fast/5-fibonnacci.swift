@@ -10,7 +10,7 @@
  */
 
 func fibonacci(number: Int) -> (Int) {
-    if number == 0 || number == 1{
+    if number == 0 || number == 1 {
         return number
     } else if number == 2 {
         return 1
@@ -19,7 +19,7 @@ func fibonacci(number: Int) -> (Int) {
             return 1
         } else if number == (-2) {
             return -1
-        } else if number < -2 {
+        } else if number < -2 { // accommodating negative numbers 
             return (fibonacci(number + 2) - fibonacci(number + 1))
         }
     }
