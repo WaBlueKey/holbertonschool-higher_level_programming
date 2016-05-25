@@ -10,7 +10,6 @@
  */
 
 protocol Classify {
-
     func isStudent() -> Bool
  }
 
@@ -28,7 +27,6 @@ class Person {
     var age: Int
 
     init(first_name: String, last_name: String, age: Int) {
-
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
@@ -37,8 +35,16 @@ class Person {
     func fullName() -> String {
         return first_name + " " + last_name
     }
+
+    func className() -> String {
+        return "Person"
+    }
 }
 class Mentor: Person, Classify {
+    override func className () -> String {
+        return "Mentor"
+    }
+
     func isStudent() -> Bool {
         return false
     }
@@ -67,8 +73,57 @@ class Mentor: Person, Classify {
 }
 
 class Student: Person, Classify {
+    override func className () -> String {
+        return "Student"
+    }
     func isStudent() -> Bool {
         return true
     }
+}
 
+class School {
+    var name: String
+    var list_persons: [Person]
+
+
+    init(name: String) {
+        self.name = name
+        self.list_persons = []
+    }
+
+    func addStudent(p: Person) -> Bool {
+        if p.className() == "Student" {
+            self.list_persons.append(p)
+            return true
+        }
+        return false
+    }
+
+    func addMentor(p: Person) -> Bool {
+        if p.className() == "Mentor" {
+            self.list_persons.append(p)
+            return true
+        }
+        return false
+    }
+
+    func listStudents() -> [Person] {
+        var list_students = self.list_persons.filter {($0 is Student)}
+        list_students.sortInPlace {($0.age > $1.age)}
+        return list_students
+    }
+
+    func listMentors() -> [Person] {
+        var list_mentors = self.list_persons.filter {($0 is Mentor)}
+        list_mentors.sortInPlace {($0.age > $1.age)}
+        return list_mentors
+    }
+
+    func listMentorsBySubject(subject: Subject) -> [Person] {
+        let mentors = self.listMentors() as! [Mentor]
+        let mentorsBySubject: [Mentor] = mentors.filter {(mentor: Mentor) -> Bool in
+            mentor.subject == subject
+        }
+        return mentorsBySubject
+    }
 }
