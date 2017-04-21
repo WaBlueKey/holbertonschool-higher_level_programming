@@ -2,4 +2,5 @@
 
 Resources: [Python data structures - list comprehension ](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
 
-Collaborated with [Gloria](https://github.com/nappybrainiac)
+Collaborated with [Gloria]
+[Gloria]: https://github.com/nappybrainiac
