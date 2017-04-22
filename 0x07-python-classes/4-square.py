@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 """
-This file contains one class Square
+This file contains one class that defines a square.
 """
 
 
 class Square:
     """
-    This class defines a square that allows for intantiation
-    with a particular size.
+    This is a class that defines a square.
     """
 
     def __init__(self, size=0):
-        """ Initialization function"""
+        """Initialize square with size 0."""
         self.__size = size
         if type(size) is not int:
             raise TypeError("size must be an integer")
@@ -20,12 +19,12 @@ class Square:
 
     @property
     def size(self):
-        """To get the size (a getter)"""
+        """Get the size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """To set the size of the square"""
+        """Set the size."""
         if type(value) is not int:
             raise TypeError("size must be an integer")
         if value < 0:
@@ -33,5 +32,5 @@ class Square:
         self.__size = value
 
     def area(self):
-        """To calculate the area of the square"""
+        """Calculate the area of a square."""
         return (self.__size ** 2)
