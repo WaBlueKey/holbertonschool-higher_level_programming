@@ -9,11 +9,6 @@ class Rectangle:
     This class defines a rectangle.
     """
 
-    w_int = "width must be an integer"
-    w_pos = "width must be >= 0"
-    h_int = "height must be an integer"
-    h_pos = "height must be >= 0"
-
     def __init__(self, width=0, height=0):
         """Initialize rectangle with width and height of 0."""
         self.width = width
@@ -28,9 +23,9 @@ class Rectangle:
     def width(self, value):
         """check if width value is an integer and is positive."""
         if type(value) is not int:
-            raise TypeError(w_int)
+            raise TypeError("width must be an integer")
         elif value < 0:
-            raise ValueError(w_pos)
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
@@ -43,9 +38,9 @@ class Rectangle:
     def height(self, value):
         """check if height is an integer and is positive."""
         if type(value) is not int:
-            raise TypeError(h_int)
+            raise TypeError("height must be an integer")
         elif value < 0:
-            raise ValueError(h_pos)
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
 
@@ -58,3 +53,21 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
+
+    def __str__(self):
+        """Print the rectangle with #."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        rect = ""
+        for i in range(self.__height):
+            rect += ("#" * self.__width) + "\n"
+        """Remove the extra new line."""
+        return rect.rstrip()
+
+    def __repr__(self):
+        """Return a string representation of the rectangle."""
+        return ("Rectangle(%s, %s)" % (str(self.__width), str(self.__height)))
+
+    def __del__(self):
+        """Deletes rectangle and prints the message."""
+        print("Bye rectangle...")
